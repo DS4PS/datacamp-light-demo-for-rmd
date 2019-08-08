@@ -270,7 +270,7 @@ calcMortgage( principal=100000 )  # never use arrows here
 Create a function to convert Fahrenheit temperatures to Celsius.
 
 * What arguments do you need?
-* How many decimals do you need (consider the `round()` function.
+* How many decimals do you need? Consider using the `round( number, decimals )` function to simplify output.
 * Don't forget a return statement!
 
 </div>
@@ -349,7 +349,7 @@ div.quiz{
   border: 1px solid lightgray;
   padding-top:10px;
   padding-bottom:10px;
-  font-size: 85%;
+  font-size: 92%;
   font-family: Verdana;
   /* font-weight: bold; */ 
   color: white;
