@@ -96,8 +96,9 @@ calcMortgage( principal=100000, APR=0.045 )
 
 <div class="question">
 
-1. What happens if you omit an argument from the function? 
-2. Explain why. 
+What happens if you omit an argument from the function?  
+
+Explain why. 
 
 </div>
 
@@ -264,7 +265,17 @@ $$
 
 If you want to make sure it works, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.
 
-```{r ex="example-04", type="sample-code", tut=TRUE}
+<div class="question">
+
+* What arguments do you need?
+* How many decimals do you need (consider the `round()` function.
+* Don't forget a return statement!
+
+</div>
+
+
+
+```{r ex="example-05", type="sample-code", tut=TRUE}
 convertToCelsius <- function()  # arguments here
 {
     # your code here
@@ -276,10 +287,6 @@ convertToCelsius()
 
 
 <div class="question">
-
-* What arguments do you need?
-* How many decimals do you need (consider the `round()` function.
-* Don't forget a return statement!
 
 Can you use this function to convert from Celsius to Fahrenheit?
 
@@ -306,19 +313,20 @@ div.datacamp-exercise{
 .datacamp-exercise .dcl-btn-primary {
     /* background-color: #fdc551; */
     /* color: #6d561e; */
-    background-color: #d9f5ff; /* #008B8B; */
-    color: SteelBlue; /* #008B8B; */
+    background-color: LightSteelBlue; /* #d9f5ff;  #008B8B; */
+    color: white; /* #008B8B; */
 }
 
 div.question{
   background-color: LightSteelBlue;
   padding-top:10px;
   padding-bottom:10px;
-  font-size: 92%;
+  font-size: 85%;
   font-family: Verdana;
   /* font-weight: bold; */
   color: white;
   padding-left:05%;
+  margin-bottom:40px;
 }
 
 body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
