@@ -252,24 +252,37 @@ calcMortgage( principal=100000 )  # never use arrows here
 
 
 
+<br>
+
+----
+
+<br>
+
+
+
 
 # Your Turn
 
+
+
+<div class="quiz">
+
 Create a function to convert Fahrenheit temperatures to Celsius.
-
-$$
-celsius = ( \ fahrenheit − 32 \ ) × \frac{5}{9}
-$$
-
-If you want to make sure it works, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.
-
-<div class="question">
 
 * What arguments do you need?
 * How many decimals do you need (consider the `round()` function.
 * Don't forget a return statement!
 
 </div>
+
+
+$$
+celsius = ( \ fahrenheit − 32 \ ) × \frac{5}{9}
+$$
+
+If you want to check your work, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.
+
+
 
 
 
@@ -279,7 +292,8 @@ convertToCelsius <- function()  # arguments here
     # your code here
 }
 
-convertToCelsius()
+temp.in.fahrenheit <- 212
+convertToCelsius( temp.in.fahrenheit )
 ```
 
 
@@ -324,6 +338,20 @@ div.question{
   font-size: 85%;
   font-family: Verdana;
   /* font-weight: bold; */
+  color: white;
+  padding-left:05%;
+  margin-bottom:40px;
+}
+
+div.quiz{
+  background-color: #bcb2a4; /* #b45959; */
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 85%;
+  font-family: Verdana;
+  /* font-weight: bold; */ 
   color: white;
   padding-left:05%;
   margin-bottom:40px;

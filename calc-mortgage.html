@@ -272,23 +272,26 @@ eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IiBjYWxjTW9ydGdhZ2UgPC0gZnVuY3Rp
 <h1>Object Assignment vs Argument Assignment</h1>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">principal &lt;-<span class="st"> </span><span class="dv">100000</span>               <span class="co"># never use equals here</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">calcMortgage</span>( <span class="dt">principal=</span><span class="dv">100000</span> )  <span class="co"># never use arrows here</span></a></code></pre></div>
+<p><br></p>
+<hr />
+<p><br></p>
 </div>
 <div id="your-turn" class="section level1">
 <h1>Your Turn</h1>
+<div class="quiz">
 <p>Create a function to convert Fahrenheit temperatures to Celsius.</p>
-<p><span class="math display">\[
-celsius = ( \ fahrenheit − 32 \ ) × \frac{5}{9}
-\]</span></p>
-<p>If you want to make sure it works, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.</p>
-<div class="question">
 <ul>
 <li>What arguments do you need?</li>
 <li>How many decimals do you need (consider the <code>round()</code> function.</li>
 <li>Don’t forget a return statement!</li>
 </ul>
 </div>
+<p><span class="math display">\[
+celsius = ( \ fahrenheit − 32 \ ) × \frac{5}{9}
+\]</span></p>
+<p>If you want to check your work, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
-eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjb252ZXJ0VG9DZWxzaXVzIDwtIGZ1bmN0aW9uKCkgICMgYXJndW1lbnRzIGhlcmVcbntcbiAgICAjIHlvdXIgY29kZSBoZXJlXG59XG5cbmNvbnZlcnRUb0NlbHNpdXMoKSJ9
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjb252ZXJ0VG9DZWxzaXVzIDwtIGZ1bmN0aW9uKCkgICMgYXJndW1lbnRzIGhlcmVcbntcbiAgICAjIHlvdXIgY29kZSBoZXJlXG59XG5cbnRlbXAuaW4uZmFocmVuaGVpdCA8LSAyMTJcbmNvbnZlcnRUb0NlbHNpdXMoIHRlbXAuaW4uZmFocmVuaGVpdCApIn0=
 </div>
 <div class="question">
 <p>Can you use this function to convert from Celsius to Fahrenheit?</p>
@@ -321,6 +324,20 @@ div.question{
   font-size: 85%;
   font-family: Verdana;
   /* font-weight: bold; */
+  color: white;
+  padding-left:05%;
+  margin-bottom:40px;
+}
+
+div.quiz{
+  background-color: #bcb2a4; /* #b45959; */
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 85%;
+  font-family: Verdana;
+  /* font-weight: bold; */ 
   color: white;
   padding-left:05%;
   margin-bottom:40px;
