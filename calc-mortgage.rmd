@@ -256,8 +256,6 @@ calcMortgage( principal=100000 )  # never use arrows here
 
 ----
 
-<br>
-
 
 
 
@@ -280,9 +278,10 @@ $$
 celsius = ( \ fahrenheit − 32 \ ) × \frac{5}{9}
 $$
 
-If you want to check your work, 212 degees Fahrenheit is equivalent to 100 degrees Celsius.
+If you want to check your work, **212 degees Fahrenheit** is equivalent to **100 degrees Celsius**.
 
 
+<br>
 
 
 
@@ -340,6 +339,7 @@ div.question{
   /* font-weight: bold; */
   color: white;
   padding-left:05%;
+  padding-right:05%;
   margin-bottom:40px;
 }
 
@@ -349,11 +349,12 @@ div.quiz{
   border: 1px solid lightgray;
   padding-top:10px;
   padding-bottom:10px;
-  font-size: 92%;
+  font-size: 87%;
   font-family: Verdana;
   /* font-weight: bold; */ 
   color: white;
   padding-left:05%;
+  padding-right:05%;
   margin-bottom:40px;
 }
 
