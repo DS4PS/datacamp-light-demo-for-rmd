@@ -1,5 +1,12 @@
 # DataCamp Light Demo for RMD Files
 
+
+This example uses the DataCamp Light widgets in a chapter explaining functions() in R.
+
+[TUTORIAL](calc-mortgage.html)  [ [RMD file](https://raw.githubusercontent.com/DS4PS/datacamp-light-demo-for-rmd/master/calc-mortgage.rmd) ]
+
+# DataCamp Light
+
 The [DataCamp Light](https://github.com/datacamp/datacamp-light) javascript library allows you to add R widgets to your HTML files so that students can do interactive examples using code. 
 
 DataCamp has created an R package called [`tutorial`](https://github.com/datacamp/tutorial) to integrate the DataCamp Light widget into R Markdown documents.
@@ -11,7 +18,7 @@ devtools::install_github( "datacamp/tutorial" )
 To see it in action, check out the `tutorial` [vignette](https://github.com/datacamp/tutorial).
 
 
-# Example RMD
+# Example RMD File
 
 ````markdown
 ---
@@ -68,10 +75,11 @@ Turns R chunks into interactive widgets.
 go_interactive( greedy = TRUE, height = 300 )
 ```
 
-With the greedy argument, you can control which elements of your R Markdown document are
-converted into DataCamp Light chunks. By default greedy is TRUE, leading to all R code chunks to
-be converted to interactive frames. Only chunks for which you specify the option `tut = FALSE` are
-not converted. If ‘greedy‘ is FALSE, only chunks for which you specify `tut = TRUE` are converted.
+With the **greedy** argument, you can control which elements of your R Markdown document are converted into DataCamp Light chunks. 
+
+By default greedy is TRUE, leading to all R code chunks to be converted to interactive frames. Only chunks for which you specify the option `tut = FALSE` are not converted. 
+
+If ‘greedy‘ is FALSE, only chunks for which you specify `tut = TRUE` are converted.
 
 
 ## type="pre-exercise-code"
@@ -86,9 +94,8 @@ R chunk option for specifying the type of chunk in the tutorial window.
 
 ## Code Validation 
 
-Test your code before launching tutorials using testwhat.
+Test your code before launching tutorials using [testwhat](https://datacamp.github.io/testwhat/).
 
-https://datacamp.github.io/testwhat/
 
 
 # Demo
@@ -99,7 +106,7 @@ Here is the [RMD file](https://github.com/DS4PS/datacamp-light-demo-for-rmd/raw/
 
 <br>
 
-# In Action
+# Customized Formats
 
 This example uses the DataCamp Light widgets in a chapter explaining functions() in R.
 
