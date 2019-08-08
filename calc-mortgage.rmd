@@ -87,7 +87,7 @@ tutorial::go_interactive( greedy=FALSE )
 args( calcMortgage )
 
 # Calculate a mortgage for a $100,000 house for 30 years with a 4.5 percent interest rate (0.045 APR)
-calcMortgage(  )  # add arguments here
+calcMortgage( principal=100000, years=30, APR=0.045 ) 
 
 # Try: calcMortgage( principal=100000 )
 calcMortgage( principal=100000, APR=0.045 )
@@ -96,9 +96,7 @@ calcMortgage( principal=100000, APR=0.045 )
 
 <div class="question">
 
-What happens if you omit an argument from the function?  
-
-Explain why. 
+What happens if you omit an argument from the function?  Why?
 
 </div>
 
@@ -151,20 +149,18 @@ We can add default values for arguments. These defaults allow us to utilize the 
 # Notice the new default arguments:
 args( calcMortgage )
 
-
-
 # Calculate a mortgage for a $100,000 house for 30 years with a 4.5 percent APR
 calcMortgage( principal=100000, years=30, APR=0.045 )
-
 
 # Now try: calcMortgage( principal=100000 )
 calcMortgage( principal=100000 )
 ```
 
+<div class="question">
 
-Note that `calcMortgage( principal=100000 )` now works because the function uses the default values for years and APR. 
+Note that **calcMortgage( principal=100000 )** now works because the function uses the default values for years and APR. 
 
-
+</div>
 
 
 ## Defaults
@@ -187,6 +183,8 @@ Note that `calcMortgage( principal=100000 )` now works because the function uses
 ```
 
 ```{r ex="example-03", type="sample-code", tut=TRUE}
+args( calcMortgage )
+
 # Calculate a mortgage for a $100,000 house for 15 years with a 3 percent APR
 
 calcMortgage( principal=100000, years=15, APR=0.03 )
