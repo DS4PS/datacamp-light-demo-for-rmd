@@ -2,6 +2,11 @@
 
 The DataCamp Light javascript library allows you to add R widgets to your HTML files so that students can do interactive examples using code. The `tutorial` package allows you to easily add these widgets to RMD documents:
 
+[Try it out](http://ds4ps.org/datacamp-light-demo-for-rmd/.)
+
+
+
+# Install the tutorial Package
 ```r
 devtools::install_github( "datacamp/tutorial" ) 
 ```
