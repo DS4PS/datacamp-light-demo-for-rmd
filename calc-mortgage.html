@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Introduction to Functions</title>
+
+<script src="calc-mortgage_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="calc-mortgage_files/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="calc-mortgage_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="calc-mortgage_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="calc-mortgage_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="calc-mortgage_files/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introduction to Functions</h1>
+
+</div>
+
+
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<p>A function is a basic data recipe. It is also an input-output machine. It accepts arguments, and returns the final product of the recipe.</p>
+<p>Let’s create a mortgage calculator as a simple example.</p>
+<p><span class="math display">\[
+monthly \ payments = \frac{principle \cdot interest \ rate}{1-(1+interest \ rate)^{-loan \ duration}}
+\]</span></p>
+<p>The function will look like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"> calcMortgage &lt;-<span class="st"> </span><span class="cf">function</span>( principal, years, APR )</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"> {</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    months &lt;-<span class="st"> </span>years <span class="op">*</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    int.rate &lt;-<span class="st"> </span>APR <span class="op">/</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    </a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="co"># amortization formula</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">    monthly.payment &lt;-<span class="st"> </span>( principal <span class="op">*</span><span class="st"> </span>int.rate ) <span class="op">/</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">                       </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>int.rate)<span class="op">^</span>(<span class="op">-</span>months) )</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    </a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    monthly.payment &lt;-<span class="st"> </span><span class="kw">round</span>( monthly.payment, <span class="dv">2</span> )</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">    <span class="kw">return</span>( monthly.payment )</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"> </a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"> }</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IiBjYWxjTW9ydGdhZ2UgPC0gZnVuY3Rpb24oIHByaW5jaXBhbCwgeWVhcnMsIEFQUiApXG4ge1xuICAgIG1vbnRocyA8LSB5ZWFycyAqIDEyXG4gICAgaW50LnJhdGUgPC0gQVBSIC8gMTJcbiAgICBcbiAgICAjIGFtb3J0aXphdGlvbiBmb3JtdWxhXG4gICAgbW9udGhseS5wYXltZW50IDwtICggcHJpbmNpcGFsICogaW50LnJhdGUgKSAvIFxuICAgICAgICAgICAgICAgICAgICAgICAoMSAtICgxICsgaW50LnJhdGUpXigtbW9udGhzKSApXG4gICAgXG4gICAgbW9udGhseS5wYXltZW50IDwtIHJvdW5kKCBtb250aGx5LnBheW1lbnQsIDIgKVxuICAgIFxuICAgIHJldHVybiggbW9udGhseS5wYXltZW50IClcbiBcbiB9Iiwic2FtcGxlIjoiIyBDaGVjayB0aGUgZnVuY3Rpb24ncyBhcmd1bWVudHM6XG5hcmdzKCBjYWxjTW9ydGdhZ2UgKVxuXG4jIENhbGN1bGF0ZSBhIG1vcnRnYWdlIGZvciBhICQxMDAsMDAwIGhvdXNlIGZvciAzMCB5ZWFycyB3aXRoIGEgNC41IHBlcmNlbnQgaW50ZXJlc3QgcmF0ZSAoMC4wNDUgQVBSKVxuY2FsY01vcnRnYWdlKCAgKSAgIyBhZGQgYXJndW1lbnRzIGhlcmVcblxuIyBUcnk6IGNhbGNNb3J0Z2FnZSggcHJpbmNpcGFsPTEwMDAwMCApXG5jYWxjTW9ydGdhZ2UoIHByaW5jaXBhbD0xMDAwMDAgKSJ9
+</div>
+<p>What happens if you omit an argument from the function?</p>
+<p>Why is that?</p>
+<div id="default-arguments" class="section level1">
+<h1>Default Arguments</h1>
+<p>We can add default values for arguments. These defaults allow us to utilize the function without specifying values for those arguments.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"> calcMortgage &lt;-<span class="st"> </span><span class="cf">function</span>( principal, <span class="dt">years=</span><span class="dv">30</span>, <span class="dt">APR=</span><span class="fl">0.045</span> )</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"> {</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    months &lt;-<span class="st"> </span>years <span class="op">*</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    int.rate &lt;-<span class="st"> </span>APR <span class="op">/</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    </a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="co"># amortization formula</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    monthly.payment &lt;-<span class="st"> </span>( principal <span class="op">*</span><span class="st"> </span>int.rate ) <span class="op">/</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="st">                       </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>int.rate)<span class="op">^</span>(<span class="op">-</span>months) )</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">    </a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    monthly.payment &lt;-<span class="st"> </span><span class="kw">round</span>( monthly.payment, <span class="dv">2</span> )</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">    <span class="kw">return</span>( monthly.payment )</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"> </a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"> }</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IiBjYWxjTW9ydGdhZ2UgPC0gZnVuY3Rpb24oIHByaW5jaXBhbCwgeWVhcnM9MzAsIEFQUj0wLjA0NSApXG4ge1xuICAgIG1vbnRocyA8LSB5ZWFycyAqIDEyXG4gICAgaW50LnJhdGUgPC0gQVBSIC8gMTJcbiAgICBcbiAgICAjIGFtb3J0aXphdGlvbiBmb3JtdWxhXG4gICAgbW9udGhseS5wYXltZW50IDwtICggcHJpbmNpcGFsICogaW50LnJhdGUgKSAvIFxuICAgICAgICAgICAgICAgICAgICAgICAoMSAtICgxICsgaW50LnJhdGUpXigtbW9udGhzKSApXG4gICAgXG4gICAgbW9udGhseS5wYXltZW50IDwtIHJvdW5kKCBtb250aGx5LnBheW1lbnQsIDIgKVxuICAgIFxuICAgIHJldHVybiggbW9udGhseS5wYXltZW50IClcbiBcbiB9Iiwic2FtcGxlIjoiIyBOb3RpY2UgdGhlIG5ldyBkZWZhdWx0IGFyZ3VtZW50czpcblxuYXJncyggY2FsY01vcnRnYWdlIClcblxuXG4jIENhbGN1bGF0ZSBhIG1vcnRnYWdlIGZvciBhICQxMDAsMDAwIGhvdXNlIGZvciAzMCB5ZWFycyB3aXRoIGEgNC41IHBlcmNlbnQgQVBSXG5cbmNhbGNNb3J0Z2FnZSggKVxuXG4jIE5vdyB0cnk6IGNhbGNNb3J0Z2FnZSggcHJpbmNpcGFsPTEwMDAwMCApXG5cbmNhbGNNb3J0Z2FnZSggcHJpbmNpcGFsPTEwMDAwMCApIn0=
+</div>
+<p>Note that <code>calcMortgage( principal=100000 )</code> now works because the function uses the default values for years and APR.</p>
+<p>Can you still use custom values for those arguments after defaults are set?</p>
+<div id="defaults" class="section level2">
+<h2>Defaults</h2>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IiBjYWxjTW9ydGdhZ2UgPC0gZnVuY3Rpb24oIHByaW5jaXBhbCwgeWVhcnM9MzAsIEFQUj0wLjA0NSApXG4ge1xuICAgIG1vbnRocyA8LSB5ZWFycyAqIDEyXG4gICAgaW50LnJhdGUgPC0gQVBSIC8gMTJcbiAgICBcbiAgICAjIGFtb3J0aXphdGlvbiBmb3JtdWxhXG4gICAgbW9udGhseS5wYXltZW50IDwtICggcHJpbmNpcGFsICogaW50LnJhdGUgKSAvIFxuICAgICAgICAgICAgICAgICAgICAgICAoMSAtICgxICsgaW50LnJhdGUpXigtbW9udGhzKSApXG4gICAgXG4gICAgbW9udGhseS5wYXltZW50IDwtIHJvdW5kKCBtb250aGx5LnBheW1lbnQsIDIgKVxuICAgIFxuICAgIHJldHVybiggbW9udGhseS5wYXltZW50IClcbiBcbiB9Iiwic2FtcGxlIjoiIyBDYWxjdWxhdGUgYSBtb3J0Z2FnZSBmb3IgYSAkMTAwLDAwMCBob3VzZSBmb3IgMTUgeWVhcnMgd2l0aCBhIDMgcGVyY2VudCBBUFJcblxuY2FsY01vcnRnYWdlKCkifQ==
+</div>
+</div>
+</div>
+<div id="implicit-argument-calls" class="section level1">
+<h1>Implicit Argument Calls</h1>
+<p>An explicit call to arguments always uses the formal argument name such as <code>principal=100000</code>.</p>
+<p>You can, however, also use implicit argument calls. These rely on the order arguments are specified in the function, and the order of your values in your call.</p>
+<p>Implicit arguments calls can be risky, however, because it is very easy to mix them up.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IiBjYWxjTW9ydGdhZ2UgPC0gZnVuY3Rpb24oIHByaW5jaXBhbCwgeWVhcnM9MzAsIEFQUj0wLjA0NSApXG4ge1xuICAgIG1vbnRocyA8LSB5ZWFycyAqIDEyXG4gICAgaW50LnJhdGUgPC0gQVBSIC8gMTJcbiAgICBcbiAgICAjIGFtb3J0aXphdGlvbiBmb3JtdWxhXG4gICAgbW9udGhseS5wYXltZW50IDwtICggcHJpbmNpcGFsICogaW50LnJhdGUgKSAvIFxuICAgICAgICAgICAgICAgICAgICAgICAoMSAtICgxICsgaW50LnJhdGUpXigtbW9udGhzKSApXG4gICAgXG4gICAgbW9udGhseS5wYXltZW50IDwtIHJvdW5kKCBtb250aGx5LnBheW1lbnQsIDIgKVxuICAgIFxuICAgIHJldHVybiggbW9udGhseS5wYXltZW50IClcbiBcbiB9Iiwic2FtcGxlIjoiIyBUcnkgdGhlc2U6XG5cbmNhbGNNb3J0Z2FnZSggMTAwMDAwLCAzMCwgMC4wNSApXG5cbmNhbGNNb3J0Z2FnZSggMzAsIDEwMDAwMCwgMC4wNSApIn0=
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

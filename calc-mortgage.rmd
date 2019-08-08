@@ -1,0 +1,205 @@
+---
+title: "Introduction to Functions"
+output:
+  html_document:
+    theme: readable
+    highlight: tango
+    self_contained: false
+---
+
+
+A function is a basic data recipe. It is also an input-output machine. It accepts arguments, and returns the final product of the recipe.
+
+Let's create a mortgage calculator as a simple example. 
+
+$$
+monthly \ payments = \frac{principle \cdot interest \ rate}{1-(1+interest \ rate)^{-loan \ duration}}
+$$
+
+The function will look like this:
+
+```{r eval=FALSE}
+ calcMortgage <- function( principal, years, APR )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+
+
+```{r, include=FALSE}
+tutorial::go_interactive( greedy=FALSE )
+```
+
+```{r ex="example-01", type="pre-exercise-code", tut=TRUE}
+ calcMortgage <- function( principal, years, APR )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+
+
+
+```{r ex="example-01", type="sample-code", tut=TRUE}
+# Check the function's arguments:
+args( calcMortgage )
+
+# Calculate a mortgage for a $100,000 house for 30 years with a 4.5 percent interest rate (0.045 APR)
+calcMortgage(  )  # add arguments here
+
+# Try: calcMortgage( principal=100000 )
+calcMortgage( principal=100000 )
+```
+
+
+What happens if you omit an argument from the function?
+
+Why is that? 
+
+
+
+
+# Default Arguments
+
+We can add default values for arguments. These defaults allow us to utilize the function without specifying values for those arguments.
+
+```{r eval=FALSE}
+ calcMortgage <- function( principal, years=30, APR=0.045 )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+
+```{r ex="example-02", type="pre-exercise-code", tut=TRUE}
+ calcMortgage <- function( principal, years=30, APR=0.045 )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+
+
+
+```{r ex="example-02", type="sample-code", tut=TRUE}
+# Notice the new default arguments:
+
+args( calcMortgage )
+
+
+# Calculate a mortgage for a $100,000 house for 30 years with a 4.5 percent APR
+
+calcMortgage( )
+
+# Now try: calcMortgage( principal=100000 )
+
+calcMortgage( principal=100000 )
+```
+
+
+Note that `calcMortgage( principal=100000 )` now works because the function uses the default values for years and APR. 
+
+Can you still use custom values for those arguments after defaults are set? 
+
+
+
+## Defaults
+
+```{r ex="example-03", type="pre-exercise-code", tut=TRUE}
+ calcMortgage <- function( principal, years=30, APR=0.045 )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+```{r ex="example-03", type="sample-code", tut=TRUE}
+# Calculate a mortgage for a $100,000 house for 15 years with a 3 percent APR
+
+calcMortgage()
+```
+
+
+# Implicit Argument Calls
+
+An explicit call to arguments always uses the formal argument name such as `principal=100000`.
+
+You can, however, also use implicit argument calls. These rely on the order arguments are specified in the function, and the order of your values in your call.
+
+Implicit arguments calls can be risky, however, because it is very easy to mix them up. 
+
+
+```{r ex="example-04", type="pre-exercise-code", tut=TRUE}
+ calcMortgage <- function( principal, years=30, APR=0.045 )
+ {
+    months <- years * 12
+    int.rate <- APR / 12
+    
+    # amortization formula
+    monthly.payment <- ( principal * int.rate ) / 
+                       (1 - (1 + int.rate)^(-months) )
+    
+    monthly.payment <- round( monthly.payment, 2 )
+    
+    return( monthly.payment )
+ 
+ }
+```
+
+```{r ex="example-04", type="sample-code", tut=TRUE}
+# Try these:
+
+calcMortgage( 100000, 30, 0.05 )
+
+calcMortgage( 30, 100000, 0.05 )
+```
