@@ -68,11 +68,19 @@ Allows the most recent version of DataCamp light to be fetched each time the web
 
 ## go_interactive()
 
-Turns all R chunks into widgets. 
+Turns R chunks into interactive widgets.
+
+```
+go_interactive( greedy = TRUE, height = 300 )
+```
+
+With the greedy argument, you can control which elements of your R Markdown document are
+converted into DataCamp Light chunks. By default greedy is TRUE, leading to all R code chunks to
+be converted to interactive frames. Only chunks for which you specify the option `tut = FALSE` are
+not converted. If ‘greedy‘ is FALSE, only chunks for which you specify `tut = TRUE` are converted.
+
 
 ## type="pre-exercise-code"
-
-
 
 R chunk option for specifying the type of chunk in the tutorial window. 
 
